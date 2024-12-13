@@ -1,0 +1,33 @@
+#Use the Following commands and instructions to install WSL 2 on windows 
+1. First update your windows machine to the latest version 
+  + Navigate to Settings > Windows Updates -> Check for updates and 
+2. Install WSL : Run Powershell as administrator 
+  + Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+  + Restart the machine
+3. Enable the Virtual Machine Features and WSL : 
+  + dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+  + dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+  + Restart the machine 
+4. Update the WSL and set the default WSL version to WSL 2 
+  + wsl --update : Will update the WSL to latest version
+  + wsl --set-default-version 2 
+5. Open Powershell and run the following commands 
+  + wsl --list --online : Lists all the available distros
+  + wsl --install -d <distribution-name>: Will install the ubuntu distribution by default 
+  + wsl --install -d kali-linux : Install the kali distribution
+      - Enter the username : 
+      - Enter the Password :
+      - Confirm the Password : 
+6. Check the installed Distros 
+  + wsl --list --verbose
+7. After the kali installation run the following command from within the kali in order to install GUI: 
+  + sudo apt update && sudo apt upgrade -y
+  + sudo apt install kali-desktop-xfce -y  : Installs the Xfce desktop for kali (Light weight)
+8. Then install the XRdp in order to use the GUI of the kali linux using Remote Desktop Prototcol (RDP)
+  + sudo apt install xrdp -y
+  + sudo service xrdp start
+  + ip a : copy the kali linux ip address 
+9. Then search remote into the windows search bar :
+  + Click on "Remote Desktop Connection" 
+  + Paste the kali linux Ip address and click on "connect" 
+  + Then use your credentails (same as your login credentials) to login with RDP
