@@ -31,3 +31,5 @@
   + Click on "Remote Desktop Connection" 
   + Paste the kali linux Ip address and click on "connect" 
   + Then use your credentails (same as your login credentials) to login with RDP
+
+For detailed instruction visit the microsoft offical page for WSL : https://learn.microsoft.com/en-us/windows/wsl/install
